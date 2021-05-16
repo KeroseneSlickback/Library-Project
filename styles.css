@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', monospace;
+	color: #050a15;
+}
+
+body {
+	background-color: #fcf2f9;
+}
+
+#top {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	background-image: linear-gradient(#f1c4e2, #fcf2f9);
+	padding: 30px;
+}
+
+#top h1 {
+	font-size: 3.5rem;
+	font-weight: 900;
+	padding: 15px;
+	background-color: #f1c4e2;
+	border: 5px solid #9572a5;
+	border-radius: 3px;
+	box-shadow: 5px 5px 5px #434d80;
+	width: 800px;
+}
+
+#survey-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#survey-section h2 {
+	padding: 20px;
+}
+
+.input-box {
+	width: 300px;
+	height: 28px;
+	font-size: 1rem;
+}
+
+#survey-form p,
+#survey-form label {
+	padding-bottom: 4px;
+	padding-top: 6px;
+	font-size: 1.1rem;
+}
+
+#submit {
+	margin-top: 12px;
+	width: 5.25rem;
+	height: 1.75rem;
+	font-size: 1rem;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.readButton,
+.deleteButton {
+	font-size: 1rem;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 3px;
+}
+
+.deleteButton {
+	background-color: #242c4b;
+	color: white;
+}
+
+.read {
+	background-color: green;
+	color: white;
+}
+
+.notRead {
+	background-color: #ca3d53;
+	color: white;
+}
+
+.book {
+	background-color: #f1c4e2;
+	width: 400px;
+	height: 230px;
+	border: 5px solid #9572a5;
+	border-radius: 3px;
+	box-shadow: 5px 5px 5px #434d80;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+
+.notReadBook {
+	background-color: #b0587c;
+	width: 400px;
+	height: 230px;
+	border: 5px solid #9572a5;
+	border-radius: 3px;
+	box-shadow: 5px 5px 5px #434d80;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+
+.book > * {
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+.book h1 {
+	font-size: 2.25rem;
+}

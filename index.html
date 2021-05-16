@@ -5,10 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
-  <link ref="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <header>
+    <div id="top">
+      <h1>Your Personal Library</h1>
+    </div>
+  </header>
+  <section id="survey-section">
+      <h2>Please upload your reading list to keep track!</h2> 
+    <form id="survey-form" action="/" method="GET">
+      <p>Title:</p>
+      <input class="input-box" type="text" id="title" name="title">
+      <p>Author(s):</p>
+      <input class="input-box" type="text" id="author" name="title">
+      <p>Number of Pages:</p>
+      <input class="input-box" type="number" id="pages" name="pages">
+      <p>Have you read it?</p>
+      <input type="checkbox" id="read" name="read" value="read">
+      <label class="input-radio" for="read">Read</label><br>
+      <input id="submit" type="submit" value="Add Book">
+    </form>
+  </section>
+  <section id="container">
+  </section>
   <script src="app.js"></script>
 </body>
 </html>
