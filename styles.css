@@ -130,7 +130,9 @@ body {
 	padding: 15px;
 }
 
-.book > * {
+.book h1,
+.book h2,
+.book h3 {
 	padding-bottom: 15px;
 	text-align: center;
 }
