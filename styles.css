@@ -7,18 +7,18 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Roboto', monospace;
-	color: #050a15;
+	color: #1a1a1a;
 }
 
 body {
-	background-color: #fcf2f9;
+	background-color: #ffffff;
 }
 
 #top {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	background-image: linear-gradient(#f1c4e2, #fcf2f9);
+	background-image: linear-gradient(#b5dee6, #ffffff);
 	padding: 30px;
 }
 
@@ -26,10 +26,10 @@ body {
 	font-size: 3.5rem;
 	font-weight: 900;
 	padding: 15px;
-	background-color: #f1c4e2;
-	border: 5px solid #9572a5;
+	background-color: #f8fffd;
+	border: 5px solid #007ba7;
 	border-radius: 3px;
-	box-shadow: 5px 5px 5px #434d80;
+	box-shadow: 5px 5px 5px #454545;
 	width: 800px;
 }
 
@@ -40,7 +40,8 @@ body {
 }
 
 #survey-section h2 {
-	padding: 20px;
+	padding: 10px;
+	font-size: 1.25rem;
 }
 
 .input-box {
@@ -59,54 +60,61 @@ body {
 #submit {
 	margin-top: 12px;
 	width: 5.25rem;
-	height: 1.75rem;
+	height: 2.25rem;
 	font-size: 1rem;
+	border: none;
+	background-color: #007ba7;
+	color: #ffffff;
+	border-radius: 3px;
 }
 
 #container {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
 
 .buttons {
 	display: flex;
-	justify-content: space-evenly;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .readButton,
 .deleteButton {
 	font-size: 1rem;
 	padding: 10px 15px;
+	margin-left: 10px;
+	margin-right: 10px;
 	border: none;
 	border-radius: 3px;
 }
 
 .deleteButton {
-	background-color: #242c4b;
-	color: white;
+	background-color: #454545;
+	color: #f1fffa;
 }
 
 .read {
-	background-color: green;
-	color: white;
+	background-color: #007ba7;
+	color: #f1fffa;
 }
 
 .notRead {
-	background-color: #ca3d53;
-	color: white;
+	background-color: #d64650;
+	color: #f1fffa;
 }
 
 .book {
-	background-color: #f1c4e2;
+	background-color: #f8fffd;
 	width: 400px;
-	height: 230px;
-	border: 5px solid #9572a5;
+	min-height: 200px;
+	max-height: 300px;
+	border: 5px solid #007ba7;
 	border-radius: 3px;
-	box-shadow: 5px 5px 5px #434d80;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	box-shadow: 5px 5px 5px #454545;
+	margin: 20px 10px;
 	padding: 15px;
 }
 
@@ -128,5 +136,29 @@ body {
 }
 
 .book h1 {
-	font-size: 2.25rem;
+	font-size: 1.75rem;
+}
+
+.book h2 {
+	font-size: 1.2rem;
+}
+
+.book h3 {
+	font-size: 1rem;
+}
+
+#submit:hover {
+	box-shadow: 0 0 4px black;
+}
+
+.readButton:hover {
+	box-shadow: 0 0 4px black;
+}
+
+.deleteButton:hover {
+	box-shadow: 0 0 4px black;
+}
+
+.notRead:hover {
+	box-shadow: 0 0 4px black;
 }

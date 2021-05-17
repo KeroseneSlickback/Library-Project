@@ -1,35 +1,3 @@
-/*
-
-A library app that takes in user input for books including the titles, author, page number, and if read or not.
-
-This app both allows for form input from the user, logs these books, then displays them back on the page. There's a toggle for read/no read on each book. 
-
-The main structure:
-
-- An array of books
-- A constructor function that sorts information
-- A basic function to take book information, route through the constructor, then push it into the books array
-
-Interaction structure:
-
-- DOM connections from HTML form input upon submit to create new books
-- Display back the collected books to the user
-  - Each book is given the same style class, but a different style for read or not read
-- Delete button, delete function
-
-Later:
-
-- Have the app save this info on local machine
-
-
-First steps:
-
-- DOM form input to pull information from HTML form
-- This input then calls a function to create new Book for info given, then calls pushes this info to myLibrary
-- Then this same function pulls that info into a separate function that sorts it into a HTML template that's applied to the webpage
-
-*/
-
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const pages = document.getElementById('pages');
@@ -37,33 +5,20 @@ const read = document.getElementById('read');
 const inputForm = document.getElementById('survey-form');
 const container = document.getElementById('container');
 
-let myLibrary = [
-	{
-		title: 'The Hobbit',
-		author: 'J.R.R. Tolkien',
-		pages: 310,
-		read: true,
-	},
-	{
-		title: 'The Second Hobbit',
-		author: 'J.R.R. Tolkien',
-		pages: 534,
-		read: false,
-	},
-	{
-		title: 'The Third Hobbit',
-		author: 'J.R.R. Tolkien',
-		pages: 211,
-		read: true,
-	},
-];
+let myLibrary = [];
+
+if (localStorage.getItem('books') === null) {
+	myLibrary = [];
+} else {
+	const booksFromStorage = JSON.parse(localStorage.getItem('books'));
+	myLibrary = booksFromStorage;
+}
 
 function Book(title, author, pages, read) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
-	// remove function here?
 }
 
 function toggleRead(event) {
@@ -83,11 +38,14 @@ function toggleRead(event) {
 	}
 }
 
-function deleteCard() {
-	console.log('Delete?');
+function deleteCard(event) {
+	const button = event.target;
+	const libraryIndex = button.parentElement.parentElement.dataset.index;
+	myLibrary.splice(libraryIndex, 1);
+	constructCard();
 }
 
-function constructCard(book) {
+function constructCard() {
 	clearBooks();
 
 	myLibrary.forEach((book, index) => {
@@ -128,6 +86,7 @@ function constructCard(book) {
 			readButton.innerText = 'Not Read';
 		}
 	});
+	localStorage.setItem('books', JSON.stringify(myLibrary));
 }
 
 function clearBooks() {
@@ -144,8 +103,13 @@ function addBookToLibrary(title, author, pages, read) {
 inputForm.addEventListener('submit', e => {
 	e.preventDefault();
 	addBookToLibrary(title.value, author.value, pages.value, read.checked);
+	inputForm.reset();
 });
 
-// delete button - addEventListener => search array, delete match of title
-// toggle read/not-read - addEventListener => swap classes of current element (but how?)
-// local storage wakaranai~~~
+constructCard();
+
+/* 
+
+
+
+*/
